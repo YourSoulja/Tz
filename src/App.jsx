@@ -1,30 +1,28 @@
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { HashRouter as Router, Routes, Route, Link } from "react-router-dom";
 import User from "./user";
 import "./App.css";
 
 function App() {
   return (
-    <>
-      <Router>
-        <div className="app">
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <div className="home">
-                  <div className="userButtonContainer">
-                    <Link to="/users" className="userButton" data-aos="fade-up">
-                      Загрузить пользователей
-                    </Link>
-                  </div>
+    <Router>
+      <div className="app">
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <div className="home">
+                <div className="userButtonContainer">
+                  <Link to="/users" className="userButton">
+                    Загрузить пользователей
+                  </Link>
                 </div>
-              }
-            />
-            <Route path="/users" element={<User />} />
-          </Routes>
-        </div>
-      </Router>
-    </>
+              </div>
+            }
+          />
+          <Route path="/users" element={<User />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
